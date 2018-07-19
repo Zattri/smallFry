@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FishGeneratorService } from './fish-generator.service';
 
 @Component({
   selector: 'sf-root',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  constructor(private fishGenerator: FishGeneratorService) {}
 
   public baitList = [
     {id: 1, name: 'Lil\' Worm'},
@@ -15,22 +18,17 @@ export class AppComponent {
     {id: 5, name: 'Shark meat'},
   ];
 
-  private fishList = [
-    {id: 1, color: 'red'},
-    {id: 2, color: 'blue'},
-    {id: 3, color: 'green'},
-    {id: 4, color: 'yellow'},
-    {id: 5, color: 'orange'},
-  ];
 
   public casted = false;
-  public selected;
+  public selectedBait;
 
   public fish = null;
 
-  private caughtList = []
+  public col1 = 'black';
+  public col2 = 'black';
 
-  constructor() { }
+
+  private caughtList = [];
 
   castLine() {
     this.casted = true;
@@ -39,7 +37,8 @@ export class AppComponent {
 
   catchFish() {
     this.caughtList.push(this.fish);
-    alert(`You've caught ${this.fish.id}`);
+    this.col1 = this.fish.colour1;
+    this.col2 = this.fish.colour2;
     this.fish = null;
   }
 
@@ -47,7 +46,9 @@ export class AppComponent {
     const timer = Math.floor(Math.random() * 32 * 1000);
     console.log(timer); // remove once dev done
     setTimeout(() => {
-      this.fish = this.fishList[Math.floor(Math.random() * this.fishList.length)];
+      this.fish = this.fishGenerator.getFishType(this.selectedBait);
+      this.col1 = 'black';
+      this.col2 = 'black';
       this.casted = false;
     }, timer);
   }

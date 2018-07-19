@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 
 import { AppComponent } from './app.component';
+import { FishGeneratorService } from './fish-generator.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { AppComponent } from './app.component';
     MatButtonModule
   ],
 
-  providers: [],
+  providers: [FishGeneratorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
