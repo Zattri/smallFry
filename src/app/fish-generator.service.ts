@@ -45,7 +45,7 @@ export class FishGeneratorService {
   getFishType(baitType: any) {
     const fish = <any>{};
 
-    fish.type = this.fishType[baitType.id];
+    fish.type = this.fishType[baitType];
     fish.rarity = this.fishRarity[Math.floor(Math.random() * 10)];
     fish.colour1 = this.fishColours[Math.floor(Math.random() * this.fishColours.length)];
     fish.colour2 = this.fishColours[Math.floor(Math.random() * this.fishColours.length)];

@@ -13,7 +13,7 @@
 
   <mat-form-field>
     <mat-select placeholder="Bait" [(value)]="selectedBait">
-      <mat-option *ngFor="let bait of baitList" [value]="bait.name">
+      <mat-option *ngFor="let bait of baitList" [value]="bait.id">
         {{bait.name}}
       </mat-option>
     </mat-select>

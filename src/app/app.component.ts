@@ -20,7 +20,7 @@ export class AppComponent {
 
 
   public casted = false;
-  public selectedBait;
+  public selectedBait = 1;
 
   public fish = null;
 
