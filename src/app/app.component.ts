@@ -20,6 +20,7 @@ export class AppComponent {
 
 
   public casted = false;
+  public hidden = true;
   public selectedBait = 1;
 
   public fish = null;
@@ -27,11 +28,15 @@ export class AppComponent {
   public col1 = 'black';
   public col2 = 'black';
 
+  public animation = null;
+
+  private waitTime = 2;
 
   private caughtList = [];
 
   castLine() {
     this.casted = true;
+    this.hidden = true;
     this.startFishing();
   }
 
@@ -43,13 +48,15 @@ export class AppComponent {
   }
 
   startFishing() {
-    const timer = Math.floor(Math.random() * 32 * 1000);
-    console.log(timer); // remove once dev done
+    const timer = Math.floor(Math.random() * this.waitTime * 1000);
+    console.log(timer / 1000 + ' seconds'); // remove once dev done
     setTimeout(() => {
       this.fish = this.fishGenerator.getFishType(this.selectedBait);
       this.col1 = 'black';
       this.col2 = 'black';
       this.casted = false;
+      this.animation = 'bounceInUp animated';
+      this.hidden = false;
     }, timer);
   }
 
