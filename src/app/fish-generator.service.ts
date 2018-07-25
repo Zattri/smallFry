@@ -49,7 +49,7 @@ export class FishGeneratorService {
     fish.rarity = this.fishRarity[Math.floor(Math.random() * 10)];
     fish.colour1 = this.fishColours[Math.floor(Math.random() * this.fishColours.length)];
     fish.colour2 = this.fishColours[Math.floor(Math.random() * this.fishColours.length)];
-
+    fish.text = fish.rarity + ' ' + fish.type;
     return fish;
   }
 }

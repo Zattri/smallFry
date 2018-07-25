@@ -27,21 +27,23 @@ export class AppComponent {
 
   public col1 = 'black';
   public col2 = 'black';
-
   public animation = null;
+  public caughtText = null;
+  public fishCount = 0;
 
   private waitTime = 2;
-
   private caughtList = [];
 
   castLine() {
+    this.caughtText = null;
     this.casted = true;
     this.hidden = true;
     this.startFishing();
   }
 
   catchFish() {
-    this.caughtList.push(this.fish);
+    this.caughtText = this.fish.text;
+    this.fishCount = this.caughtList.length;
     this.col1 = this.fish.colour1;
     this.col2 = this.fish.colour2;
     this.fish = null;
@@ -58,6 +60,7 @@ export class AppComponent {
       this.animation = 'bounceInUp animated';
       this.hidden = false;
     }, timer);
+    this.caughtList.push(this.fish);
   }
 
 }
