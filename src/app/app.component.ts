@@ -31,7 +31,7 @@ export class AppComponent {
   public caughtText = null;
   public fishCount = 0;
 
-  private waitTime = 2;
+  private waitTime = 30;
   private caughtList = [];
 
   castLine() {
