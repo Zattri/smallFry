@@ -24,10 +24,10 @@ export class FishGeneratorService {
     'Petty',
     'Common',
     'Uncommon',
-    'Medium-rare',
     'Rare',
     'Exotic',
     'Epic',
+    'Mythic',
     'Legendary',
     'Golden',
     'Uncatchable'
@@ -47,10 +47,15 @@ export class FishGeneratorService {
 
     fish.type = this.fishType[baitType];
     fish.rarity = this.fishRarity[Math.floor(Math.random() * 10)];
-    fish.colour1 = this.fishColours[Math.floor(Math.random() * this.fishColours.length)];
-    fish.colour2 = this.fishColours[Math.floor(Math.random() * this.fishColours.length)];
+    fish.colour1 = this.fishColours[this.randomFishColour()];
+    fish.colour2 = this.fishColours[this.randomFishColour()];
+    while (fish.colour2 === fish.colour1) { fish.colour2 = this.fishColours[this.randomFishColour()]; }
     fish.text = fish.rarity + ' ' + fish.type;
     return fish;
+  }
+
+  randomFishColour() {
+    return Math.floor(Math.random() * this.fishColours.length);
   }
 }
 

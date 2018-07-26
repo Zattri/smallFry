@@ -31,7 +31,8 @@ export class AppComponent {
   public caughtText = null;
   public fishCount = 0;
 
-  private waitTime = 30;
+  private minWaitTime = 3;
+  private maxWaitTime = 5;
   private caughtList = [];
 
   castLine() {
@@ -50,7 +51,7 @@ export class AppComponent {
   }
 
   startFishing() {
-    const timer = Math.floor(Math.random() * this.waitTime * 1000);
+    const timer = Math.floor(Math.random() * ((this.maxWaitTime - this.minWaitTime) * 1000)) + (this.minWaitTime * 1000);
     console.log(timer / 1000 + ' seconds'); // remove once dev done
     setTimeout(() => {
       this.fish = this.fishGenerator.getFishType(this.selectedBait);
