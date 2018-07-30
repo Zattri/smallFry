@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppComponent } from './app.component';
 import { FishGeneratorService } from './fish-generator.service';
@@ -20,7 +22,9 @@ import { FishGeneratorService } from './fish-generator.service';
     MatSelectModule,
     MatIconModule,
     MatButtonModule,
-    MatChipsModule
+    MatChipsModule,
+    FlexLayoutModule,
+    MatSidenavModule
   ],
 
   providers: [FishGeneratorService],

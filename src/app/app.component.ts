@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FishGeneratorService } from './fish-generator.service';
+import { MatSidenav } from '../../node_modules/@angular/material/sidenav';
 
 @Component({
   selector: 'sf-root',
@@ -7,6 +8,8 @@ import { FishGeneratorService } from './fish-generator.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  @ViewChild('sidenav') sidenav: MatSidenav;
 
   constructor(private fishGenerator: FishGeneratorService) {}
 
