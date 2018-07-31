@@ -10,4 +10,6 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
 body {
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
