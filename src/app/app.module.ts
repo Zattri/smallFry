@@ -26,10 +26,6 @@ import { FishGeneratorService } from './fish-generator.service';
     MatChipsModule
   ],
 
-  exports: [
-    FishComponent
-  ],
-
   providers: [FishGeneratorService],
   bootstrap: [AppComponent]
 })
