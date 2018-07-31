@@ -8,9 +8,10 @@ import {Component, Input, OnInit} from '@angular/core';
 export class FishComponent implements OnInit {
 
   @Input() fish;
+
+  // TODO: better dynamic classes
   public uncaught = ['fish', 'centreMiddle', 'animated', 'bounceInUp'];
   public caught = ['fish', 'centreMiddle', 'animated', 'shake'];
-
 
   public fishColors = ['black', 'black'];
 
