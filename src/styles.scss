@@ -7,7 +7,32 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 @include angular-material-theme($app-theme);
 
 @import '/assets/waves.scss';
+@import '/assets/animate.css';
 
 body {
     overflow: hidden;
+}
+
+.centreBottom {
+  position: absolute;
+  left: 45%;
+  top: 80%;
+}
+
+.centreMiddle {
+  position: absolute;
+  left: 45%;
+  top: 20%;
+}
+
+.centreTop {
+  position: absolute;
+  left: 45%;
+  top: 10%;
+}
+
+.topRight {
+  position: absolute;
+  top: 5%;
+  right: 5%;
 }

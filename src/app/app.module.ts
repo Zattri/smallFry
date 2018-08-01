@@ -7,11 +7,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
 
 import { AppComponent } from './app.component';
+import { FishComponent } from './fish/fish.component';
+
 import { FishGeneratorService } from './fish-generator.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FishComponent
   ],
 
   imports: [

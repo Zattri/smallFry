@@ -23,11 +23,8 @@ export class AppComponent {
   public hidden = true;
   public selectedBait = 1;
 
-  public fish = null;
+  public fish;
 
-  public col1 = 'black';
-  public col2 = 'black';
-  public animation = null;
   public caughtText = null;
   public fishCount = 0;
 
@@ -43,23 +40,19 @@ export class AppComponent {
   }
 
   catchFish() {
-    this.caughtText = this.fish.text;
+    this.caughtText = this.fish.name;
     this.fishCount = this.caughtList.length;
-    this.col1 = this.fish.colour1;
-    this.col2 = this.fish.colour2;
-    this.fish = null;
+    this.fish.caught = true;
   }
 
   startFishing() {
+    this.fish = null;
+
     const timer = Math.floor(Math.random() * ((this.maxWaitTime - this.minWaitTime) * 1000)) + (this.minWaitTime * 1000);
     console.log(timer / 1000 + ' seconds'); // remove once dev done
     setTimeout(() => {
-      this.fish = this.fishGenerator.getFishType(this.selectedBait);
-      this.col1 = 'black';
-      this.col2 = 'black';
+      this.fish = this.fishGenerator.getFish(this.selectedBait);
       this.casted = false;
-      this.animation = 'bounceInUp animated';
-      this.hidden = false;
     }, timer);
     this.caughtList.push(this.fish);
   }

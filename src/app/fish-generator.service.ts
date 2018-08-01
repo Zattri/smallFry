@@ -42,19 +42,26 @@ export class FishGeneratorService {
     'orange'
   ];
 
-  getFishType(baitType: any) {
-    const fish = <any>{};
+  getFish(baitType: any) {
+    // TODO: interface?
+    const fish = {
+      type: this.fishType[baitType],
+      rarity: this.fishRarity[Math.floor(Math.random() * 10)],
+      colors: [this.fishColours[this.randomColor()], this.fishColours[this.randomColor()]],
+      name: '',
+      caught: false
+    };
 
-    fish.type = this.fishType[baitType];
-    fish.rarity = this.fishRarity[Math.floor(Math.random() * 10)];
-    fish.colour1 = this.fishColours[this.randomFishColour()];
-    fish.colour2 = this.fishColours[this.randomFishColour()];
-    while (fish.colour2 === fish.colour1) { fish.colour2 = this.fishColours[this.randomFishColour()]; }
-    fish.text = fish.rarity + ' ' + fish.type;
+    while (fish.colors[0] === fish.colors[1]) {
+      fish.colors[1] = this.fishColours[this.randomColor()];
+    }
+
+    fish.name = fish.rarity + ' ' + fish.type;
+
     return fish;
   }
 
-  randomFishColour() {
+  randomColor() {
     return Math.floor(Math.random() * this.fishColours.length);
   }
 }
