@@ -13,7 +13,7 @@
     </mat-form-field>
     <br>
     <button mat-raised-button color="primary" (click)="castLine()">Cast Line</button>
-    <button mat-raised-button color="primary" (click)="catchFish()">Catch fish!</button>
+    <button mat-raised-button color="primary" (click)="catchFish()" [disabled]="!fish">Catch fish!</button>
     </div>
 
     <div class="centreText centreTop catchText">
