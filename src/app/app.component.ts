@@ -40,6 +40,7 @@ export class AppComponent {
     this.caughtText = null;
     this.casted = true;
     this.hidden = true;
+    this.fish = null;
     this.startFishing();
   }
 
@@ -50,8 +51,6 @@ export class AppComponent {
   }
 
   startFishing() {
-    this.fish = null;
-
     const timer = Math.floor(Math.random() * ((this.maxWaitTime - this.minWaitTime) * 1000)) + (this.minWaitTime * 1000);
     console.log(timer / 1000 + ' seconds'); // remove once dev done
     setTimeout(() => {

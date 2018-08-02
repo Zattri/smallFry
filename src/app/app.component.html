@@ -43,12 +43,14 @@
           <button mat-button (click)="sidenav.toggle()">Toggle</button>
           <button mat-button (click)="mainmenu.toggle()">Toggle</button>
         </div>
+
         <div fxFlex fxLayoutAlign="end start">
           <div class="topRight countText">
             <div>Fish count: {{fishCount}}</div>
           </div>
         </div>
       </div>
+      
       <div fxLayout="row" fxLayoutAlign="center start">
         <div class="catchText">
           <div *ngIf="casted">You're now fishing.</div>
