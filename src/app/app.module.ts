@@ -9,11 +9,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppComponent } from './app.component';
+import { FishComponent } from './fish/fish.component';
+
 import { FishGeneratorService } from './fish-generator.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FishComponent
   ],
 
   imports: [

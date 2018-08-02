@@ -7,6 +7,7 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 @include angular-material-theme($app-theme);
 
 @import '/assets/waves.scss';
+@import '/assets/animate.css';
 
 body {
     overflow: hidden;
