@@ -10,6 +10,7 @@ import { MatSidenav } from '../../node_modules/@angular/material/sidenav';
 export class AppComponent {
 
   @ViewChild('sidenav') sidenav: MatSidenav;
+  @ViewChild('mainmenu') mainmenu: MatSidenav;
 
   constructor(private fishGenerator: FishGeneratorService) {}
 

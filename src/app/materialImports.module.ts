@@ -34,16 +34,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
-import { AppComponent } from './app.component';
-import { FishComponent } from './fish/fish.component';
-import { FishGeneratorService } from './fish-generator.service';
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    FishComponent
-  ],
-
   imports: [
     CommonModule,
     BrowserModule,
@@ -107,9 +98,6 @@ import { FishGeneratorService } from './fish-generator.service';
     MatDatepickerModule,
     MatPaginatorModule,
     MatSnackBarModule
-  ],
-
-  providers: [FishGeneratorService],
-  bootstrap: [AppComponent]
+  ]
 })
-export class AppModule { }
+export class MaterialImports {}

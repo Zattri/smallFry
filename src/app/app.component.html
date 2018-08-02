@@ -1,6 +1,33 @@
 <div class="container">
-  <mat-drawer-container autosize>
-    <mat-drawer #sidenav mode="over" position="end">
+  <mat-sidenav-container autosize hasBackdrop="false">
+    <mat-sidenav #mainmenu mode="over" position="start">
+      <button mat-button (click)="mainmenu.toggle()">close</button>
+      <mat-menu #mainMenu="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="fish"><span>Fish</span></button>
+        <button mat-menu-item [matMenuTriggerFor]="invertebrates"><span>Invertebrates</span></button>
+      </mat-menu>
+
+      <mat-menu #invertebrates="matMenu">
+        <button mat-menu-item>Insects</button>
+        <button mat-menu-item>Molluscs</button>
+        <button mat-menu-item>Crustaceans</button>
+        <button mat-menu-item>Corals</button>
+        <button mat-menu-item>Arachnids</button>
+        <button mat-menu-item>Velvet worms</button>
+        <button mat-menu-item>Horseshoe crabs</button>
+      </mat-menu>
+      
+      <mat-menu #fish="matMenu">
+        <button mat-menu-item>Baikal oilfish</button>
+        <button mat-menu-item>Bala shark</button>
+        <button mat-menu-item>Ballan wrasse</button>
+        <button mat-menu-item>Bamboo shark</button>
+        <button mat-menu-item>Banded killifish</button>
+      </mat-menu>
+    </mat-sidenav>
+
+    <mat-sidenav #sidenav mode="over" position="end">
+      <button mat-button (click)="sidenav.close()">Close</button>
       <mat-form-field>
         <mat-select placeholder="Bait" [(value)]="selectedBait">
           <mat-option *ngFor="let bait of baitList" [value]="bait.id">
@@ -8,13 +35,13 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-    </mat-drawer>
-
+    </mat-sidenav>
 
     <div fxFill fxLayout="column" fxLayoutAlign="end center">
       <div fxLayout="row">
         <div fxFlex fxLayoutAlign="start start">
           <button mat-button (click)="sidenav.toggle()">Toggle</button>
+          <button mat-button (click)="mainmenu.toggle()">Toggle</button>
         </div>
         <div fxFlex fxLayoutAlign="end start">
           <div class="topRight countText">
@@ -82,8 +109,7 @@
       </div>
 
     </div>
-
-  </mat-drawer-container>
+  </mat-sidenav-container>
 </div>
 
 <div class="background">
